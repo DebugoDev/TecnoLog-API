@@ -54,6 +54,7 @@ public class StockItemService(
             );
 
         var paginatedResult = await query
+            .Include(s => s.UnitOfMeasurement)
             .OrderBy(s => s.Code)
             .ToPaginatedResultAsync(_mapper, page, size);
 
