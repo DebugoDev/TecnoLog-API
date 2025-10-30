@@ -2,4 +2,4 @@
 
 Inventory Management Software with incoming and outgoing stock control
 
-![Alt](https://repobeats.axiom.co/api/embed/09bb36e3a6efdd3d68a06ab5fe1dcd34b73d6d13.svg "Repobeats analytics image")
+![Alt](https://repobeats.axiom.co/api/embed/c9fc4fd0177bc2d41510c2af43b518a23bc9c8e9.svg "Repobeats analytics image")
