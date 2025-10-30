@@ -41,12 +41,5 @@ public class UserMapping : BaseMapping<User>
                 .HasPrincipalKey(e => e.Id)
                 .OnDelete(DeleteBehavior.SetNull)
                 .IsRequired(false);
-
-        builder.HasOne(u => u.ProfileImage)
-                .WithMany()
-                .HasForeignKey("profile_image_id")
-                .HasPrincipalKey(i => i.Id)
-                .OnDelete(DeleteBehavior.SetNull)
-                .IsRequired(false);
     }
 }

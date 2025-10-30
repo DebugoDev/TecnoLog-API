@@ -1,12 +1,14 @@
 namespace Application.Mappers;
 
+using System.Text;
 using Application.Entities;
 using Application.Exceptions;
+using Application.Interfaces.Services.Core.Auth;
 using Application.Mappers.Primitives;
 using Application.Models.Entities;
 using Application.Models.Requests.User;
 
-public class UserMapper : IUserMapper
+public class UserMapper(IProfileService profileService) : IUserMapper
 {
     public UserDto ToDto(User entity)
     {
@@ -18,7 +20,7 @@ public class UserMapper : IUserMapper
             entity.UserDepartment?.Name,
             entity.Email,
             entity.Role,
-            entity.ProfileImage?.FileGuid
+            profileService.GetProfileDto(entity)
         );
     }
 

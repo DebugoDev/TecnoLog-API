@@ -11,5 +11,4 @@ public class User : BaseEntity
     public string? Password { get; set; }
     public ERole Role { get; set; } = ERole.DATA;
     public UserDepartment? UserDepartment { get; set; }
-    public Image? ProfileImage { get; set; }
 }

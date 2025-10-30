@@ -11,5 +11,5 @@ public record UserDto(
     string? UserDepartment,
     string? Email,
     ERole Role,
-    Guid? ImageGuid
+    ProfileDto Profile
 ) : BaseDto(Id, CreatedAt);
