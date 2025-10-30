@@ -1,5 +1,6 @@
 ﻿namespace Infrastructure.Services;
 
+using System.Security.Cryptography;
 using System.Text;
 using Application.Entities;
 using Application.Interfaces.Services.Core.Auth;
@@ -27,7 +28,16 @@ public class ProfileService : IProfileService
 
     private static string GetNameHexColor(string name)
     {
-        var bytes = Encoding.UTF8.GetBytes(name);
-        return BitConverter.ToString(bytes).Replace("-", "");
+        byte[] inputBytes = Encoding.UTF8.GetBytes(name);
+        byte[] hashBytes = MD5.HashData(inputBytes);
+
+        StringBuilder hexColor = new(7);
+        hexColor.Append('#');
+
+        hexColor.Append(hashBytes[0].ToString("X2"));
+        hexColor.Append(hashBytes[1].ToString("X2"));
+        hexColor.Append(hashBytes[2].ToString("X2"));
+
+        return hexColor.ToString();
     }
 }
