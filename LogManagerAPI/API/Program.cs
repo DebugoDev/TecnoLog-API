@@ -36,7 +36,7 @@ Console.ForegroundColor = app.Environment.IsDevelopment() ? ConsoleColor.DarkGre
 Console.WriteLine($"Environment: {environment}");
 
 Console.ForegroundColor = ConsoleColor.DarkBlue;
-Console.WriteLine("LogManager API - Logistics Management Software");
+Console.WriteLine("TecnoLog API - Logistics Management Software");
 Console.WriteLine("Copyright (c) 2025 Lorena Gobara Falci");
 Console.ResetColor();
 
@@ -61,7 +61,7 @@ app.MapControllers();
 
 using (var scope = app.Services.CreateScope())
 {
-    var context = scope.ServiceProvider.GetRequiredService<LogManagerDbContext>();
+    var context = scope.ServiceProvider.GetRequiredService<TecnoLogDbContext>();
     var hasher = scope.ServiceProvider.GetRequiredService<IPasswordHasher>();
     var dateTimeProvider = scope.ServiceProvider.GetRequiredService<IDateTimeProvider>();
 

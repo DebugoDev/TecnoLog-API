@@ -6,9 +6,9 @@ using Application.Interfaces.Repositories.Primitives;
 using Microsoft.EntityFrameworkCore;
 using Infrastructure.Data;
 
-public class BaseRepository<T>(LogManagerDbContext context, IDateTimeProvider dateTimeProvider) : IBaseRepository<T> where T : BaseEntity
+public class BaseRepository<T>(TecnoLogDbContext context, IDateTimeProvider dateTimeProvider) : IBaseRepository<T> where T : BaseEntity
 {
-    protected readonly LogManagerDbContext _context = context;
+    protected readonly TecnoLogDbContext _context = context;
     protected readonly DbSet<T> _dbSet = context.Set<T>();
     protected readonly IDateTimeProvider _dateTimeProvider = dateTimeProvider;
 

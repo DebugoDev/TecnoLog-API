@@ -7,5 +7,5 @@ using Infrastructure.Data;
 using Infrastructure.Repositories.Primitives;
 
 public class StockItemRepository(
-    LogManagerDbContext context, IDateTimeProvider dateTimeProvider
+    TecnoLogDbContext context, IDateTimeProvider dateTimeProvider
 ) : BaseRepository<StockItem>(context, dateTimeProvider), IStockItemRepository;

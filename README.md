@@ -1,4 +1,4 @@
-# LogManager API
+# TecnoLog API
 
 Inventory Management Software with incoming and outgoing stock control
 

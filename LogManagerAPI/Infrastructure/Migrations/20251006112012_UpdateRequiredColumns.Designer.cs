@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Infrastructure.Migrations
 {
-    [DbContext(typeof(LogManagerDbContext))]
+    [DbContext(typeof(TecnoLogDbContext))]
     [Migration("20251006112012_UpdateRequiredColumns")]
     partial class UpdateRequiredColumns
     {

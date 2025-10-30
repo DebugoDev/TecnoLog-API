@@ -8,7 +8,7 @@ using Infrastructure.Repositories.Primitives;
 using Microsoft.EntityFrameworkCore;
 
 public class UserRepository(
-    LogManagerDbContext context, IDateTimeProvider dateTimeProvider
+    TecnoLogDbContext context, IDateTimeProvider dateTimeProvider
 ) : BaseRepository<User>(context, dateTimeProvider), IUserRepository
 {
     public async Task<User?> GetByEmailAsNoTrackingAsync(string email, CancellationToken cancellationToken = default) =>

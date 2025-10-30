@@ -9,7 +9,7 @@ using Microsoft.Extensions.Options;
 public class EmailSenderService(IOptions<EmailSenderOptions> options) : IEmailSenderService
 {
     private readonly EmailSenderOptions _options = options.Value;
-    private const string displayName = "Equipe LogManager";
+    private const string displayName = "Equipe TecnoLog";
 
     public void SendEmail(string recipient, string subject, string body)
     {

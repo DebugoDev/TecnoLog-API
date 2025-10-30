@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Infrastructure.Migrations
 {
-    [DbContext(typeof(LogManagerDbContext))]
+    [DbContext(typeof(TecnoLogDbContext))]
     [Migration("20251001232534_AddStock")]
     partial class AddStock
     {

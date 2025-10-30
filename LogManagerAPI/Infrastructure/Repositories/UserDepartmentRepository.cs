@@ -7,5 +7,5 @@ using Infrastructure.Data;
 using Infrastructure.Repositories.Primitives;
 
 public class UserDepartmentRepository(
-    LogManagerDbContext context, IDateTimeProvider dateTimeProvider
+    TecnoLogDbContext context, IDateTimeProvider dateTimeProvider
 ) : BaseRepository<UserDepartment>(context, dateTimeProvider), IUserDepartmentRepository;

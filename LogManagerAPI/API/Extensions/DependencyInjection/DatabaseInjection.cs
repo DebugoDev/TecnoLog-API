@@ -9,7 +9,7 @@ public static class DatabaseInjection
     {
         var connectionString = configuration.GetConnectionString("Postgres");
 
-        services.AddDbContext<LogManagerDbContext>(options =>
+        services.AddDbContext<TecnoLogDbContext>(options =>
             options.UseNpgsql(connectionString));
 
         return services;

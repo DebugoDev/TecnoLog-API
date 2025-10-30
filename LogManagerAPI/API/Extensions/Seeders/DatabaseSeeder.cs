@@ -11,7 +11,7 @@ using Microsoft.Extensions.Options;
 
 public static class DatabaseSeeder
 {
-    public static async Task SeedAdminUserAsync(this LogManagerDbContext context, IPasswordHasher hasher, IDateTimeProvider dateTimeProvider, IOptions<AdminUserOptions> adminOptions)
+    public static async Task SeedAdminUserAsync(this TecnoLogDbContext context, IPasswordHasher hasher, IDateTimeProvider dateTimeProvider, IOptions<AdminUserOptions> adminOptions)
     {
         if (!await context.Users.AnyAsync())
         {
