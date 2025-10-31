@@ -40,8 +40,8 @@ public class StockItemService(
 
         if (!string.IsNullOrWhiteSpace(search))
             query = query.Where(s =>
-                EF.Functions.Like(s.Code, $"%{search}%") ||
-                EF.Functions.Like(s.Description!, $"%{search}%"));
+                EF.Functions.ILike(s.Code, $"%{search}%") ||
+                EF.Functions.ILike(s.Description!, $"%{search}%"));
 
         if (stockGroup is not null)
             query = query.Where(s => s.StockGroup == stockGroup);
