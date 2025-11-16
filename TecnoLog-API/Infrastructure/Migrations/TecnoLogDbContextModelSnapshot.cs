@@ -22,59 +22,6 @@ namespace Infrastructure.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Application.Entities.Image", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
-
-                    b.Property<DateTime?>("DeletedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("deleted_at");
-
-                    b.Property<string>("Extension")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)")
-                        .HasColumnName("extension");
-
-                    b.Property<Guid>("FileGuid")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("file_guid");
-
-                    b.Property<byte[]>("ImageContentL")
-                        .IsRequired()
-                        .HasColumnType("bytea")
-                        .HasColumnName("image_content_large");
-
-                    b.Property<byte[]>("ImageContentM")
-                        .IsRequired()
-                        .HasColumnType("bytea")
-                        .HasColumnName("image_content_medium");
-
-                    b.Property<byte[]>("ImageContentS")
-                        .IsRequired()
-                        .HasColumnType("bytea")
-                        .HasColumnName("image_content_small");
-
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_at");
-
-                    b.HasKey("Id")
-                        .HasName("PK_Image");
-
-                    b.HasAlternateKey("FileGuid");
-
-                    b.ToTable("tb_image", (string)null);
-                });
-
             modelBuilder.Entity("Application.Entities.Register", b =>
                 {
                     b.Property<Guid>("Id")
@@ -347,16 +294,11 @@ namespace Infrastructure.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("updated_at");
 
-                    b.Property<Guid?>("profile_image_id")
-                        .HasColumnType("uuid");
-
                     b.Property<Guid?>("user_department_id")
                         .HasColumnType("uuid");
 
                     b.HasKey("Id")
                         .HasName("PK_User");
-
-                    b.HasIndex("profile_image_id");
 
                     b.HasIndex("user_department_id");
 
@@ -438,17 +380,10 @@ namespace Infrastructure.Migrations
 
             modelBuilder.Entity("Application.Entities.User", b =>
                 {
-                    b.HasOne("Application.Entities.Image", "ProfileImage")
-                        .WithMany()
-                        .HasForeignKey("profile_image_id")
-                        .OnDelete(DeleteBehavior.SetNull);
-
                     b.HasOne("Application.Entities.UserDepartment", "UserDepartment")
                         .WithMany()
                         .HasForeignKey("user_department_id")
                         .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("ProfileImage");
 
                     b.Navigation("UserDepartment");
                 });
