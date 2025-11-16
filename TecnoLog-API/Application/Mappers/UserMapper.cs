@@ -24,7 +24,7 @@ public class UserMapper(IProfileService profileService) : IUserMapper
         );
     }
 
-    public User FromNewUser(NewUser entity)
+    public User FromUserCsv(UserCsv entity)
     {
         return new User
         {
