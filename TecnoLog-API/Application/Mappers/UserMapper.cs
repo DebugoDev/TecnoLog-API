@@ -4,7 +4,7 @@ using System.Text;
 using Application.Entities;
 using Application.Exceptions;
 using Application.Interfaces.Services.Core.Auth;
-using Application.Mappers.Primitives;
+using Application.Interfaces.Mappers;
 using Application.Models.Entities;
 using Application.Models.Requests.User;
 

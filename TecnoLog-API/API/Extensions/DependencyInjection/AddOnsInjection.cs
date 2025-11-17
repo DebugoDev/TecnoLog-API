@@ -17,6 +17,8 @@ public static class AddOnsInjection
         services.AddScoped<IProfileService, ProfileService>();
 
         services.AddSingleton<IDateTimeProvider, SystemDateTimeProvider>();
+        services.AddScoped<ICsvService, CsvService>();
+        services.AddScoped<IEnumHelper, EnumHelper>();
 
         return services;
     }
