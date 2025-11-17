@@ -34,4 +34,16 @@ public class UserMapper(IProfileService profileService) : IUserMapper
             Role = entity.Role
         };
     }
+
+    public UserCsv ToUserCsv(User entity)
+    {
+        return new UserCsv
+        {
+            Code = entity.Code,
+            Name = entity.Name,
+            Email = entity.Email,
+            Department = entity.UserDepartment?.Name,
+            Role = entity.Role
+        };
+    }
 }
