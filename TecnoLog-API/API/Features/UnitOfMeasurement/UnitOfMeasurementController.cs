@@ -8,12 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 public class UnitOfMeasurementController : ControllerBase
 {
     [HttpGet("values")]
-    public async Task<IActionResult> GetUnitOfMeasurements(
+    public async Task<IActionResult> GetUnitOfMeasurementValues(
         [FromServices] IUnitOfMeasurementService service
     )
     {
-        var response = await service.GetUnitOfMeasurementValues();
-        return Ok(response);
+        var result = await service.GetUnitOfMeasurementValues();
+        return Ok(result);
     }
 
 }

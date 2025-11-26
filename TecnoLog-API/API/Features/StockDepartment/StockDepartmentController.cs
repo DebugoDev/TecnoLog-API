@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Mvc;
 public class StockDepartmentController : ControllerBase
 {
     [HttpGet("values")]
-    public async Task<IActionResult> StockDepartments(
+    public async Task<IActionResult> GetStockDepartmentValues(
         [FromServices] IStockDepartmentService service
     )
     {
-        var response = await service.GetStockDepartmentValues();
-        return Ok(response);
+        var result = await service.GetStockDepartmentValues();
+        return Ok(result);
     }
 }
